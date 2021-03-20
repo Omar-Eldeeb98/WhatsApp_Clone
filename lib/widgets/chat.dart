@@ -1,10 +1,28 @@
-import 'package:flutter/material.dart';
 
-Widget chatTile(String imgUrl, String userName, String msg, String date  , bool seen) {
-  return InkWell(
-    onTap: (){},
+import 'package:flutter/material.dart';
+import 'chatDetails.dart';
+
+class ChatTile  extends StatelessWidget {
+
+  final String imgUrl;
+  final String userName;
+  final String msg;
+  final String date;
+   final bool seen;
+
+
+   ChatTile(this.imgUrl , this.userName , this.msg , this.date , this.seen);
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+    onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: ( BuildContext context)=> ChatDetail( imgUrl , userName , msg , date , seen)   ));
+    },
+    
     child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 15.0 , ),
+      padding: EdgeInsets.symmetric(
+        vertical: 15.0,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,24 +54,24 @@ Widget chatTile(String imgUrl, String userName, String msg, String date  , bool 
                     Text(date),
                   ],
                 ),
-                SizedBox(height: 5.0,),
+                SizedBox(
+                  height: 5.0,
+                ),
                 Row(
                   children: [
                     Expanded(child: Text(msg)),
-                   if(seen) Icon(
-                      Icons.check_circle,
-                      size: 18.0,
-                      color: Colors.green,
-
-                    ),
-                    if(!seen)
-                     Icon(
-                      Icons.check_circle_outline,
-                      size: 18.0,
-                      color: Colors.grey,
-
-                    ),
-                    
+                    if (seen)
+                      Icon(
+                        Icons.check_circle,
+                        size: 18.0,
+                        color: Colors.green,
+                      ),
+                    if (!seen)
+                      Icon(
+                        Icons.check_circle_outline,
+                        size: 18.0,
+                        color: Colors.grey,
+                      ),
                   ],
                 ),
               ],
@@ -63,4 +81,8 @@ Widget chatTile(String imgUrl, String userName, String msg, String date  , bool 
       ),
     ),
   );
+      
+   
+  }
 }
+

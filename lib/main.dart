@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapa_clone/widgets/chat.dart';
-import 'package:whatsapa_clone/widgets/story.dart';
+import './widgets/chat.dart';
+import './widgets/story.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +24,7 @@ class WhatsAppClone extends StatefulWidget {
 }
 
 class _WhatsAppCloneState extends State<WhatsAppClone> {
-// the main color of the app
+// ...................
   Color basicColor = Colors.grey[900];
   var containerRadius = Radius.circular(25.0);
 // ....... list of image url to represent  avatar pic
@@ -79,14 +79,14 @@ class _WhatsAppCloneState extends State<WhatsAppClone> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   // custome widget is here
-                  story(imgUrl[0], 'Omar Eld'),
-                  story(imgUrl[1], 'michel Eld'),
-                  story(imgUrl[2], 'mark Eld'),
-                  story(imgUrl[3], 'soso Eld'),
-                  story(imgUrl[4], 'momo Eld'),
-                  story(imgUrl[5], 'nono Eld'),
-                  story(imgUrl[6], 'spider Eld'),
-                  story(imgUrl[7], 'joue Eld'),
+                  story(imgUrl[0], 'Omar '),
+                  story(imgUrl[1], 'yoyo '),
+                  story(imgUrl[2], 'ahmed '),
+                  story(imgUrl[3], 'Nona '),
+                  story(imgUrl[4], 'summer '),
+                  story(imgUrl[5], 'mony '),
+                  story(imgUrl[6], 'angeila '),
+                  story(imgUrl[7], '7odaa '),
                 ],
               ),
             ),
@@ -106,18 +106,18 @@ class _WhatsAppCloneState extends State<WhatsAppClone> {
                     const EdgeInsets.only(left: 10 , right: 10 , top: 10),
                 child: ListView(
                   children: [
-                    chatTile(imgUrl[0], 'userName', 'hey!', 'ysterday', false),
-                    chatTile(imgUrl[1], 'userName', 'i will be there', '5/5/2021', true),
-                    chatTile(imgUrl[2], 'userName', 'ok bro...', '7/2/2021', false),
-                    chatTile(imgUrl[3], 'userName', 'meet me at night', '10/2/2021', true),
-                    chatTile(imgUrl[4], 'userName', 'love u', '20/2/2021', false),
-                    chatTile(imgUrl[5], 'userName', 'send package', '15/7/2021', true),
-                    chatTile(imgUrl[6], 'userName', 'on time pls', '17/8/2021', false),
-                    chatTile(imgUrl[7], 'userName', 'fuck off', '8/2/2021', true),
+                    ChatTile(imgUrl[0], 'Omar', 'hey! i checked your code , it is fucken good , keep going ...', 'ysterday', false),
+                    ChatTile(imgUrl[1], 'yoyo', 'i will be there', '5/5/2021', true),
+                    ChatTile(imgUrl[2], 'ahmed', 'ok bro...', '7/2/2021', false),
+                    ChatTile(imgUrl[3], 'nona', 'meet me at night', '10/2/2021', true),
+                    ChatTile(imgUrl[4], 'summer ', 'love u', '20/2/2021', false),
+                    ChatTile(imgUrl[5], 'mony', 'send package', '15/7/2021', true),
+                    ChatTile(imgUrl[6], 'angeila', 'on time pls', '17/8/2021', false),
+                    ChatTile(imgUrl[7], '7odaa', 'fuck off', '8/2/2021', true),
                   ],
                 ),
               ),
-            ),
+            ), 
           ),
         ],
       ),
